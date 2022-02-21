@@ -221,14 +221,14 @@ See the [AEM 6.5 documentation](https://experienceleague.adobe.com/docs/experien
 * The SMTP server host name should be set to $[env:AEM_PROXY_HOST;default=proxy.tunnel]
 * The SMTP server port should be set to the value of the original proxy port set in the portForwards parameter used in the API call when configuring up advanced networking. For example, 30465 (rather than 465)
 
-It is also recommended that if port 465 has been requested:
+It is also recommended that if portOrig 30465 has been requested:
 
-* set `smtp.port` to `465`
+* set `smtp.port` to `30465`
 * set `smtp.ssl` to `true`
 
-and if port 587 has been requested:
+and if portOrig 30587 has been requested:
 
-* set `smtp.port` to `587`
+* set `smtp.port` to `30587`
 * set `smtp.ssl` to `false`
 
 The `smtp.starttls` property will automatically be set by AEM as a Cloud Service at runtime to an appropriate value. Thus, if `smtp.ssl` is set to true, `smtp.startls` is ignored. If `smtp.ssl` is set to false, `smtp.starttls` is set to true. This is regardless of the `smtp.starttls` values set in your OSGI configuration.
